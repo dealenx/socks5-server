@@ -5,6 +5,8 @@
 
 Simple socks5 server using go-socks5 with authentication, allowed ips list and destination FQDNs filtering
 
+
+
 # Examples
 
 - Run docker container using default container port 1080 and expose it to world using host port 1080, with auth creds
@@ -29,8 +31,25 @@ Simple socks5 server using go-socks5 with authentication, allowed ips list and d
 
 
 # Build your own image:
+
 `docker-compose -f docker-compose.build.yml up -d`\
-Just don't forget to set parameters in the `.env` file.
+Just don't forget to set параметры в `.env` файле.
+
+# Using docker-compose.dokploy.yml
+
+To run with `docker-compose.dokploy.yml`, you need a `.env` file in the project root. Specify environment variables in this file:
+
+```env
+PROXY_USER=someuser
+PROXY_PASSWORD=somepass
+PROXY_PORT=1080
+```
+
+Example run:
+
+```shell
+docker-compose -f docker-compose.dokploy.yml up -d
+```
 
 # Test running service
 
