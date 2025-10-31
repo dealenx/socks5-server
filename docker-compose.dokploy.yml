@@ -11,14 +11,14 @@
 #       - PROXY_PASSWORD=${PROXY_PASSWORD}
 #       - PROXY_PORT=${PROXY_PORT}
 
-version: '3.8' # Рекомендуется использовать более новую версию спецификации
+version: '3.9' # Рекомендуется использовать более новую версию спецификации
 services:
   socks5:
     restart: always
     image: serjs/go-socks5-proxy
     env_file: .env
-    deploy:
-      replicas: 3
+    # deploy:
+    #   replicas: 3
     ports:
       # Docker будет автоматически назначать свободные порты на хосте
       # для порта 1080 каждого контейнера.
